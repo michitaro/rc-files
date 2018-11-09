@@ -46,6 +46,9 @@ sudo yum -y install ncurses-devel libevent-devel
 (
     cd /etc/yum.repos.d
     sudo wget https://download.virtualbox.org/virtualbox/rpm/el/virtualbox.repo
+    mkdir -p ~/tmp && cd ~/tmp
+    wget -q https://www.virtualbox.org/download/oracle_vbox.asc
+    sudo rpm --import oracle_vbox.asc
     virtualbox_package=$(sudo yum search VirtualBox | grep -E '^VirtualBox-5' | tail -1 | cut -d\  -f1)
     yum -y install $virtualbox_package
 )
