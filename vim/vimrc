@@ -1,0 +1,33 @@
+set shell=bash
+syntax on
+set enc=utf-8
+set fenc=utf-8
+set showmatch
+set autoindent
+set backspace=2
+set number
+set expandtab
+set tags+=tags;
+
+set backup
+set backupdir=$HOME/.vim-backup
+let &directory = &backupdir
+
+map <C-B>n :tabnext<CR>
+map <C-B><C-N> :tabnext<CR>
+map <C-B>p :tabprev<CR>
+map <C-B><C-P> :tabprev<CR>
+map <C-B>e :tablast<CR>
+map <C-B>a :tabfirst<CR>
+
+au BufRead,BufNewFile * set tabstop=4
+au BufRead,BufNewFile * set shiftwidth=4
+au BufRead,BufNewFile *.rb,Rakefile,*.rake,*.yaml,*.html,*.haml,*.scss,*.coffee set tabstop=2
+au BufRead,BufNewFile *.rb,Rakefile,*.rake,*.yaml,*.html,*.haml,*.scss,*.coffee set shiftwidth=2
+au BufRead,BufNewFile *.frag,*.vert,*.fp,*.vp,*.glsl setf glsl
+
+highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=22
+highlight DiffDelete cterm=bold ctermfg=10 ctermbg=52
+highlight DiffChange cterm=bold ctermfg=10 ctermbg=17
+highlight DiffText   cterm=bold ctermfg=10 ctermbg=21
+
