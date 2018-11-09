@@ -23,6 +23,7 @@ sudo yum -y install ncurses-devel libevent-devel
 	sudo yum install -y fish
     mkdir -p ~/.config/fish
     cp -r $base/fish/ ~/.config/fish
+    sudo chsh -s /usr/bin/fish $USER
 )
 
 # htop
@@ -47,7 +48,7 @@ sudo yum -y install ncurses-devel libevent-devel
     sudo wget -O /etc/yum.repos.d/virtualbox.repo \
         https://download.virtualbox.org/virtualbox/rpm/el/virtualbox.repo
     virtualbox_package=$(sudo yum search -y VirtualBox | grep -E '^VirtualBox-5' | tail -1 | cut -d\  -f1)
-    yum -y install $virtualbox_package
+    sudo yum -y install $virtualbox_package
 )
 
 # minikube
