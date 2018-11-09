@@ -22,7 +22,7 @@ sudo yum -y install ncurses-devel libevent-devel
         https://download.opensuse.org/repositories/shells:fish:release:2/CentOS_7/shells:fish:release:2.repo
 	sudo yum install -y fish
     mkdir -p ~/.config/fish
-    cp -r $base/fish/ ~/.config/fish
+    cp -r $base/fish/* ~/.config/fish
     sudo chsh -s /usr/bin/fish $USER
 )
 
