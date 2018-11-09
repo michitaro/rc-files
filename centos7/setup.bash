@@ -18,8 +18,8 @@ sudo yum -y install ncurses-devel libevent-devel
 
 # fish
 (
-	cd /etc/yum.repos.d/
-	sudo wget https://download.opensuse.org/repositories/shells:fish:release:2/CentOS_7/shells:fish:release:2.repo
+	sudo wget -O /etc/yum.repos.d/shells:fish:release:2.repo \
+        https://download.opensuse.org/repositories/shells:fish:release:2/CentOS_7/shells:fish:release:2.repo
 	sudo yum install -y fish
     mkdir -p ~/.config/fish
     cp -r $base/fish/ ~/.config/fish
@@ -44,11 +44,8 @@ sudo yum -y install ncurses-devel libevent-devel
 
 # virtualbox
 (
-    cd /etc/yum.repos.d
-    sudo wget https://download.virtualbox.org/virtualbox/rpm/el/virtualbox.repo
-    mkdir -p ~/tmp && cd ~/tmp
-    wget -q https://www.virtualbox.org/download/oracle_vbox.asc
-    sudo rpm --import oracle_vbox.asc
+    sudo wget -O /etc/yum.repos.d/virtualbox.repo \
+        https://download.virtualbox.org/virtualbox/rpm/el/virtualbox.repo
     virtualbox_package=$(sudo yum search VirtualBox | grep -E '^VirtualBox-5' | tail -1 | cut -d\  -f1)
     yum -y install $virtualbox_package
 )
