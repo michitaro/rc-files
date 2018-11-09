@@ -3,6 +3,7 @@ base=$(readlink -f $(dirname $0))
 set -e
 rm -rf ~/tmp
 
+sudo yum -y update
 sudo yum install -y wget vim gcc git automake
 sudo yum -y install ncurses-devel libevent-devel
 
@@ -41,18 +42,4 @@ sudo yum -y install ncurses-devel libevent-devel
 (
     cp $base/vim/vimrc ~/.vimrc
     mkdir -p ~/.vim-backup
-)
-
-# virtualbox
-(
-    sudo wget -O /etc/yum.repos.d/virtualbox.repo \
-        https://download.virtualbox.org/virtualbox/rpm/el/virtualbox.repo
-    virtualbox_package=$(sudo yum search -y VirtualBox | grep -E '^VirtualBox-5' | tail -1 | cut -d\  -f1)
-    sudo yum -y install $virtualbox_package
-)
-
-# minikube
-(
-    curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
-        && sudo install minikube-linux-amd64 /usr/local/bin/minikube
 )
