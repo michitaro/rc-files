@@ -40,6 +40,13 @@ sudo yum -y install ncurses-devel libevent-devel
 
 # vim
 (
+    mkdir -p ~/tmp && cd ~/tmp
+	rm -rf ~/local/packages/vim
+    git clone git@github.com:vim/vim.git
+    cd vim
+    ./configure --prefix $HOME/local/packages/vim 
+    make -j
+    make install
     cp $base/vim/vimrc ~/.vimrc
     mkdir -p ~/.vim-backup
 )
