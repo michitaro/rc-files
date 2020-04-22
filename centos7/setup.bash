@@ -4,8 +4,8 @@ set -e
 rm -rf ~/tmp
 
 sudo yum -y update
-sudo yum install -y wget vim gcc git automake
-sudo yum -y install ncurses-devel libevent-devel
+sudo yum install -y wget vim gcc git automake bison
+sudo yum install -y ncurses-devel libevent-devel
 
 # tmux
 (
