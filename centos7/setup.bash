@@ -50,3 +50,9 @@ sudo yum install -y ncurses-devel libevent-devel
     cp $base/vim/vimrc ~/.vimrc
     mkdir -p ~/.vim-backup
 )
+
+# fzf
+(
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install
+)
