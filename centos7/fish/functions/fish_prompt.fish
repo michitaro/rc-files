@@ -1,3 +1,8 @@
 function fish_prompt
-	echo -n '$ '
+    switch $USER
+    case root
+        echo -n '# '
+    case '*'
+        echo -n '$ '
+    end
 end
