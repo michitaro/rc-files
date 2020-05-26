@@ -20,8 +20,8 @@ map <C-B><C-P> :tabprev<CR>
 map <C-B>e :tablast<CR>
 map <C-B>a :tabfirst<CR>
 
-au BufRead,BufNewFile * set tabstop=4
-au BufRead,BufNewFile * set shiftwidth=4
+au BufRead,BufNewFile * set tabstop=2
+au BufRead,BufNewFile * set shiftwidth=2
 au BufRead,BufNewFile *.rb,Rakefile,*.rake,*.yaml,*.html,*.haml,*.scss,*.coffee set tabstop=2
 au BufRead,BufNewFile *.rb,Rakefile,*.rake,*.yaml,*.html,*.haml,*.scss,*.coffee set shiftwidth=2
 au BufRead,BufNewFile *.frag,*.vert,*.fp,*.vp,*.glsl setf glsl
